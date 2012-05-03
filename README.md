@@ -7,7 +7,7 @@ local man pages over HTTP with some pretty UI sprinkled over it.
 
 Here's [tmux][]'s man page served to you by manservant:
 
-![preview](http://f.cl.ly/items/1s0X3n092K1E0q3D1m3I/man%20page.png)
+![preview](http://f.cl.ly/items/1Y3i1Y2T463k3L291w3o/manservant.png)
 
 [tmux]: http://tmux.sourceforge.net/
 

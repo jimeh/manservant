@@ -2,22 +2,68 @@
 
 Fed up with browsing manual pages in a console using `less` or Googling for
 the man page only to realize that your local install differs from the man page
-you found?
+you found? Me too, so last night I hacked together manservant to serve up
+local man pages over HTTP with some pretty UI sprinkled over it.
 
-Me too, so I hacked together manservant to serve up local man pages over HTTP
-with some pretty UI sprinkled over it. Here's [tmux][]'s man page served to
-you by manservant:
+Here's [tmux][]'s man page served to you by manservant:
 
 ![preview](http://f.cl.ly/items/1s0X3n092K1E0q3D1m3I/man%20page.png)
 
+[tmux]: http://tmux.sourceforge.net/
+
+## Requirements
+
+- [Ruby][].
+- [Bundler][] Ruby gem.
+
+[ruby]: http://www.ruby-lang.org/
+[bundler]: http://gembundler.com/
 
 ## Installation
 
-TODO: Write usage instructions here
+Manservant is a simple [Sinatra][] Ruby application, and is run just like any
+other Rack application.
 
-## Usage
+[sinatra]: http://www.sinatrarb.com/
 
-TODO: Write usage instructions here
+### Pow
+
+My preferred way to run manservant is with [Pow][]. And installation is really
+simple:
+
+    $ git clone https://github.com/jimeh/manservant.git ~/.pow/man
+    $ cd ~/.pow/man && bundle install
+
+Then visit http://man.dev/ in your browser.
+
+[pow]: http://pow.cx/
+
+### Other
+
+There's many ways to run a Rack application, and I'm not gonna cover that
+here. But if you merely want to get manservant up and running to have a look,
+just clone the repo and run `rackup` inside the project directory:
+
+    $ git clone https://github.com/jimeh/manservant.git ~/Projects/manservant
+    $ rackup
+
+Then visit http://localhost:9292/ in your browser.
+
+## Credits
+
+- Man page to HTML conversion is done by [man2html][], which is bundled into
+  manservant.
+- The HTML UI style is shamelessly ripped from the [ronn][] gem's HTML output
+  format.
+
+[man2html]: http://dcssrv1.oit.uci.edu/indiv/ehood/man2html.html
+[ronn]: http://rtomayko.github.com/ronn/ronn.1.html
+
+## Todo
+
+- Less shitty code.
+- Caching of rendered man pages.
+- Write some tests.
 
 ## Contributing
 

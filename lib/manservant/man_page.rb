@@ -27,8 +27,8 @@ module Manservant
 
     def to_html
       return @html if @html
-      to_text # raise exception is man page doesn't exist
-      @html = post_process_html `#{man_cmd} | #{man2html_cmd}`.strip
+      to_text # raise exception if man page doesn't exist
+      @html = post_process_html(`#{man_cmd} | #{man2html_cmd}`.strip)
     end
 
     private

@@ -1,17 +1,32 @@
 .man-content,
 .man-content pre,
 .man-navigation,
-.man-navigation a {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+.man-navigation a,
+.man-error,
+.man-error p {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace !important;
 }
 
 .man-content h2 {
   font-size: 15px;
   line-height: 18px;
 }
-
 .man-content pre {
   margin: 4ex 4ex;
+}
+
+.man-error {
+  width: 500px;
+  height: 230px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: -115px 0 0 -250px;
+  text-align: center;
+}
+.man-error p {
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .man-navigation {
@@ -25,11 +40,6 @@
   border-left: 1px solid #dbdbdb;
   background: #eee;
   overflow: auto;
-}
-.man-navigation .form-search {
-  position: fixed;
-  bottom: 5px;
-  margin-bottom: 10px;
 }
 .man-navigation a,
 .man-navigation a:hover,

@@ -34,19 +34,31 @@ module Manservant
       end
     end # helpers
 
+    #
+    # Routes
+    #
+
     get '/' do
       redirect to('/man')
     end
 
     get '/:page' do
-      name, section = parse_page_name(params[:page])
-      @page = find_page(name, section)
+      @name, @section = parse_page_name(params[:page])
+      @page = find_page(@name, @section)
       begin
         @page.to_html # render and populate sections
       rescue Manservant::ManPage::NotFound => e
         raise Sinatra::NotFound
       end
       erb :page, :layout => :layout
+    end
+
+    #
+    # Handlers
+    #
+
+    not_found do
+      erb :not_found
     end
 
   end

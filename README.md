@@ -45,6 +45,7 @@ here. But if you merely want to get manservant up and running to have a look,
 just clone the repo and run `rackup` inside the project directory:
 
     git clone https://github.com/jimeh/manservant.git ~/Projects/manservant
+    cd ~/Projects/manservant
     rackup
 
 Then visit [http://localhost:9292/](http://localhost:9292/) in your browser.

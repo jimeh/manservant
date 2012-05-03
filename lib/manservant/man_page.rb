@@ -47,7 +47,7 @@ module Manservant
 
     def man_cmd
       section_arg = "-S \"#{section}\"" if section
-      "man -P cat #{name} #{section_arg}"
+      "man -P cat \"#{name}\" #{section_arg}"
     end
 
     def man2html_cmd
@@ -56,7 +56,7 @@ module Manservant
         result << val.to_s if val && val != true
         result
       end
-      "#{@man2html_path} #{args.join(' ')}"
+      "\"#{@man2html_path}\" #{args.join(' ')}"
     end
 
     def defaults

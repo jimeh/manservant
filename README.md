@@ -34,7 +34,7 @@ simple:
     git clone https://github.com/jimeh/manservant.git ~/.pow/man
     cd ~/.pow/man && bundle install
 
-Then visit http://man.dev/ in your browser.
+Then visit [http://man.dev/](http://man.dev/) in your browser.
 
 [pow]: http://pow.cx/
 
@@ -47,7 +47,7 @@ just clone the repo and run `rackup` inside the project directory:
     git clone https://github.com/jimeh/manservant.git ~/Projects/manservant
     rackup
 
-Then visit http://localhost:9292/ in your browser.
+Then visit [http://localhost:9292/](http://localhost:9292/) in your browser.
 
 ## Credits
 

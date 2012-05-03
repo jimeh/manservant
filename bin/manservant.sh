@@ -10,9 +10,16 @@
 # from the command line, such that one could type 'man tmux', and go straight
 # to the browser
 
-# This will only support OSX for the moment, until I find the right "open browser"
-# cli call for other OSes
+# This will only support OSX and some linux distros, given that it relies on 
+# 'open' or 'xdg-open'
 
 MANSERVANT_HOST="http://man.dev"
 
-open "$MANSERVANT_HOST/$1"
+# OS Detection
+if [[ "$unamestr" == 'Darwin' ]]; then
+    open "$MANSERVANT_HOST/$1"
+elif [[ "$unamestr" == 'Linux' ]]; then
+    # Pipe the stdout/err out of the way. 
+    xdg-open "$MANSERVANT_HOST/$1" &> /dev/null &
+fi
+    

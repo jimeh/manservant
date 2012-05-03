@@ -34,7 +34,10 @@ module Manservant
     private
 
     def post_process_html(html)
+      # Strip empty lines from top of man page.
       html.gsub!(/^<PRE>\s*<\!\-\-.+\-\->\s*/, "<PRE>\n")
+
+      # Locate and attach id property to all section headers.
       html.gsub!(/<\/PRE>\s*<H2>\s*(.+?)\s*<\/H2>\s*<PRE>/) do |match|
         title = $1
         id = title.gsub(/[^a-z0-9\-_\.\s]/i, '').

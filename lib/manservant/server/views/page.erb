@@ -1,0 +1,11 @@
+<div class="man-navigation">
+  <div class="sections">
+    <% @page.sections.each do |id, title| %>
+    <a href="#<%= id %>"><%= title %></a>
+    <% end %>
+  </div>
+</div>
+
+<div class="man-content">
+  <%= @page.to_html %>
+</div>

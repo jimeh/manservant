@@ -1,0 +1,47 @@
+.man-content,
+.man-content pre,
+.man-navigation,
+.man-navigation a {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.man-content h2 {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.man-content pre {
+  margin: 4ex 4ex;
+}
+
+.man-navigation {
+  display: block !important;
+  position: fixed;
+  top: 0;
+  left: 96ex;
+  bottom: 0;
+  width: 100%;
+  padding: 38px 0 20px 14px;
+  border-left: 1px solid #dbdbdb;
+  background: #eee;
+  overflow: auto;
+}
+.man-navigation .form-search {
+  position: fixed;
+  bottom: 5px;
+  margin-bottom: 10px;
+}
+.man-navigation a,
+.man-navigation a:hover,
+.man-navigation a:link,
+.man-navigation a:visited {
+  display: block;
+  margin: 0;
+  padding: 5px 2px 5px 16px;
+  color: #999;
+  text-decoration: none;
+}
+.man-navigation a:hover {
+  color: #111;
+  text-decoration: underline;
+}

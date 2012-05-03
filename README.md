@@ -31,8 +31,8 @@ other Rack application.
 My preferred way to run manservant is with [Pow][]. And installation is really
 simple:
 
-    $ git clone https://github.com/jimeh/manservant.git ~/.pow/man
-    $ cd ~/.pow/man && bundle install
+    git clone https://github.com/jimeh/manservant.git ~/.pow/man
+    cd ~/.pow/man && bundle install
 
 Then visit http://man.dev/ in your browser.
 
@@ -44,8 +44,8 @@ There's many ways to run a Rack application, and I'm not gonna cover that
 here. But if you merely want to get manservant up and running to have a look,
 just clone the repo and run `rackup` inside the project directory:
 
-    $ git clone https://github.com/jimeh/manservant.git ~/Projects/manservant
-    $ rackup
+    git clone https://github.com/jimeh/manservant.git ~/Projects/manservant
+    rackup
 
 Then visit http://localhost:9292/ in your browser.
 

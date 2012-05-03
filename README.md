@@ -34,7 +34,8 @@ The simplest way to run manservant is through [Pow][]. Ensure you have Pow
 installed and working, and run the following to install manservant:
 
     git clone https://github.com/jimeh/manservant.git ~/.pow/man
-    cd ~/.pow/man && bundle install
+    cd ~/.pow/man
+    bundle install
 
 Then visit [http://man.dev/](http://man.dev/) in your browser.
 

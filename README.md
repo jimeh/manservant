@@ -21,8 +21,8 @@ Here's [tmux][]'s man page served to you by manservant:
 
 ## Installation
 
-Manservant is a simple [Sinatra][] Ruby application, and is run just like any
-other Rack application.
+Manservant is a simple [Sinatra][] application, and is run just like any other
+Rack application.
 
 [sinatra]: http://www.sinatrarb.com/
 

@@ -61,7 +61,7 @@ module Manservant
 
     def defaults
       {
-        :man2html_path => `command -v man2html`,
+        :man2html_path => `which man2html`,
         :man2html_args => {
           :bare => true,
           :topm => 0

@@ -13,7 +13,9 @@
 # This will only support OSX and some linux distros, given that it relies on 
 # 'open' or 'xdg-open'
 
-MANSERVANT_HOST="http://man.dev"
+MANSERVANT_HOST="http://localhost:9292"
+
+unamestr=`uname`
 
 # OS Detection
 if [[ "$unamestr" == 'Darwin' ]]; then

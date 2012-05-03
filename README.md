@@ -28,8 +28,8 @@ Rack application.
 
 ### Pow
 
-My preferred way to run manservant is with [Pow][]. And installation is really
-simple:
+The simplest way to run manservant is through [Pow][]. Ensure you have Pow
+installed and working, and run the following to install manservant:
 
     git clone https://github.com/jimeh/manservant.git ~/.pow/man
     cd ~/.pow/man && bundle install
@@ -65,6 +65,7 @@ Then visit [http://localhost:9292/](http://localhost:9292/) in your browser.
 - Less shitty code.
 - Caching of rendered man pages.
 - Write some tests.
+- Search.
 
 ## Contributing
 

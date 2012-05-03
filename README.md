@@ -1,5 +1,7 @@
 # Manservant
 
+Browse man pages in style with your personal manservant.
+
 Fed up with browsing manual pages in a console using `less` or Googling for
 the man page only to realize that your local install differs from the man page
 you found? Me too, so last night I hacked together manservant to serve up

@@ -16,12 +16,12 @@
 }
 
 .man-error {
-  width: 500px;
+  width: 560px;
   height: 230px;
   position: fixed;
   top: 50%;
   left: 50%;
-  margin: -115px 0 0 -250px;
+  margin: -115px 0 0 -280px;
   text-align: center;
 }
 .man-error p {

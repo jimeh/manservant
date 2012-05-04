@@ -1,6 +1,10 @@
 <div class="man-error">
   <div class="hero-unit">
     <h1>404</h1>
-    <p>No entry for <%= @name %> in section <%= @section || 1 %> of the manual.</p>
+    <% if @section %>
+      <p>No entry for <%= @name %> in section <%= @section %> of the manual.</p>
+    <% else %>
+      <p>No manual entry for <%= @name %>.
+    <% end %>
   </div>
 </div>

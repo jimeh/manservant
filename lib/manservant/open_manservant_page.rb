@@ -39,10 +39,7 @@ end
 def build_template
     # We have to replicate sinatra/rails page composing here
     # This is kinda hacky, but the idea is to not pull in any deps
-
-    # Make sure assets are in place
-    # TODO 
-
+    
     # Pull open the layout
     layout = File.read(
               File.expand_path('../server/views/layout.erb',

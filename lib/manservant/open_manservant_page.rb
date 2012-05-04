@@ -80,7 +80,7 @@ def build_page(name, section = nil)
   begin
     @page = find_page(name, section)
     @name = name
-    
+
     # Build a template
     template_str = build_template()
 
@@ -97,8 +97,7 @@ def build_page(name, section = nil)
     Launchy.open('file://'+filename)
 
     # Cleanup rendered pages -- 
-    #   we'll need to let the browser work first
-    # TODO 
+    #   we'll need to let the browser work first 
     
   rescue Manservant::ManPage::NotFound => e
     puts 'No manual entry for ', name

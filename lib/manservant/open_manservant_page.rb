@@ -42,7 +42,7 @@ def build_template
 
     # Make sure assets are in place
     # TODO 
-    
+
     # Pull open the layout
     layout = File.read(
               File.expand_path('../server/views/layout.erb',
@@ -55,8 +55,23 @@ def build_template
     # the layout has a big "<%= yield %>" that we're targeting
     composed = layout.sub('<%= yield %>', page_body)
 
+    # Pull open the CSS files so they can be inlined
+    boostrap_css = File.read(
+              File.expand_path('../server/public/css/bootstrap.min.css',
+                               __FILE__))
+    boostrap_css = '<style>' + boostrap_css + '</style>'
+
+    style_css = File.read(
+                  File.expand_path('../server/public/css/style.css',
+                                    __FILE__))
+    style_css = '<style>' + style_css + '</style>'
+
+    # Inline the stylesheets
+    styled = composed.sub('<link rel="stylesheet" href="/css/bootstrap.min.css" />', boostrap_css)
+    styled = styled.sub('<link rel="stylesheet" href="/css/style.css" />', style_css)
+
     # Feed the composed templates to ERB
-    return composed
+    return styled
 end
 
 

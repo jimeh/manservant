@@ -10,4 +10,4 @@
 # from the command line, such that one could type 'man tmux', and go straight
 # to the browser
 
-ruby ./lib/manservant/open_manserver_page "$@"
+(cd ../lib/manservant/ && ruby open_manservant_page.rb "$@")

@@ -98,7 +98,10 @@ def build_page(name, section = nil)
 
     # Cleanup rendered pages -- 
     #   we'll need to let the browser work first 
-    
+    sleep(5)
+
+    File.delete(filename)
+
   rescue Manservant::ManPage::NotFound => e
     puts 'No manual entry for ', name
     exit 1

@@ -77,10 +77,10 @@ end
 
 def build_page(name, section = nil) 
     # Build a standalone manservant page
-  puts 'Building...'
   begin
     @page = find_page(name, section)
-
+    @name = name
+    
     # Build a template
     template_str = build_template()
 
@@ -92,8 +92,6 @@ def build_page(name, section = nil)
 
     # Write it out to a /tmp/[file] 
     File.open(filename, 'w') {|file| file.write(rendered_page) }
-
-
 
     # Launchy open the file
     Launchy.open('file://'+filename)

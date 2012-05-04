@@ -40,6 +40,9 @@ def build_template
     # We have to replicate sinatra/rails page composing here
     # This is kinda hacky, but the idea is to not pull in any deps
 
+    # Make sure assets are in place
+    # TODO 
+    
     # Pull open the layout
     layout = File.read(
               File.expand_path('../server/views/layout.erb',
@@ -75,8 +78,7 @@ def build_page(name, section = nil)
     # Write it out to a /tmp/[file] 
     File.open(filename, 'w') {|file| file.write(rendered_page) }
 
-    # Make sure assets are in place
-    # TODO 
+
 
     # Launchy open the file
     Launchy.open('file://'+filename)

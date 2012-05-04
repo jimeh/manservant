@@ -27,7 +27,7 @@ def sanitize_name(name)
 end
 
 def find_page(name, section = nil)
-  ManPage.new(name, section,
+  Manservant::ManPage.new(name, section,
     :man2html_path => man2html_path,
     :man2html_args => { :cgiurl => '\'/${title}.${section}\'' })
 end
@@ -59,8 +59,10 @@ end
 
 def build_page(name, section = nil) 
     # Build a standalone manservant page
-  page = find_page(name, section)
+  puts 'Building...'
   begin
+    @page = find_page(name, section)
+
     # Build a template
     template_str = build_template()
 
@@ -68,7 +70,7 @@ def build_page(name, section = nil)
     page_template = ERB.new(template_str, 0, "%<>")
     rendered_page = page_template.result(binding)
 
-    filename = '/tmp/man_'+name+'_'+section+'.html'
+    filename = '/tmp/man_'+name+'.html'
 
     # Write it out to a /tmp/[file] 
     File.open(filename, 'w') {|file| file.write(rendered_page) }
@@ -77,7 +79,7 @@ def build_page(name, section = nil)
     # TODO 
 
     # Launchy open the file
-    Launchy.open('file:///tmp/'+filename)
+    Launchy.open('file://'+filename)
 
     # Cleanup rendered pages -- 
     #   we'll need to let the browser work first
@@ -94,6 +96,7 @@ end
 # Get the target page
 if ARGV.length > 0
   name, section = parse_page_name(ARGV[0])
+  build_page(name, section)
 else
   # No target page, should just exit
   puts 'What manual page do you want?'

@@ -9,7 +9,7 @@
 # This script generates a Manservant page on demand, saving it 
 # to /tmp and spawning a browser to view the page
 
-require '../lib/manservant/man_page'
+require 'manservant/man_page'
 require 'launchy'
 require 'erb'
 
@@ -52,10 +52,10 @@ def build_template
                                     __FILE__))
     # Stuff the body in the layout 
     # the layout has a big "<%= yield %>" that we're targeting
-    # TODO 
+    composed = layout.sub('<%= yield %>', page_body)
 
     # Feed the composed templates to ERB
-    return layout
+    return composed
 end
 
 
@@ -70,13 +70,17 @@ def build_page(name, section = nil)
     page_template = ERB.new(template_str, 0, "%<>")
     rendered_page = page_template.result(binding)
 
+    filename = '/tmp/man_'+name+'_'+section+'.html'
+
     # Write it out to a /tmp/[file] 
-    File.open('/tmp/', 'w') {|f| f.write(rendered_page) }
+    File.open(filename, 'w') {|file| file.write(rendered_page) }
 
     # Make sure assets are in place
     # TODO 
+
     # Launchy open the file
-    # TODO
+    Launchy.open('file:///tmp/'+filename)
+
     # Cleanup rendered pages -- 
     #   we'll need to let the browser work first
 

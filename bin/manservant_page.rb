@@ -10,7 +10,7 @@
 # to /tmp and spawning a browser to view the page
 
 require 'lib/manservant/man_page'
-require 'process'
+require 'launchy'
 
 # Check if there's a cached/open version of the page already
 
@@ -20,3 +20,7 @@ require 'process'
     # Fit that HTML into the template
     # Make sure assets are in place
 # Write it out to a /tmp/[file] 
+
+# Launchy open the file
+
+# Cleanup rendered pages -- we'll need to let the browser work first

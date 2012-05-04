@@ -13,6 +13,11 @@ Here's [tmux][]'s man page served to you by manservant:
 
 [tmux]: http://tmux.sourceforge.net/
 
+This version of manservant includes a static manservant page 
+generator/viewer system, developed by Anand Gupta. Essentially, this allows you
+to invoke manservant from the commandline and have a browser with a neat
+manserver page come up, without keeping a server running in the background. 
+
 ## Requirements
 
 - [Ruby][].
@@ -23,12 +28,25 @@ Here's [tmux][]'s man page served to you by manservant:
 
 ## Installation
 
+Manserver comes in two forms, one a static html-man page prettifier,
+and the other a full-fledged a web application.
+
+### Static version
+
+Manserver can be invoked statically by running the manserver.sh script 
+in the bin folder: 
+`./manserver.sh [programname]`
+
+We still need to make the PATH-coupled installation process easier, but for now
+some shell scripting will be required to properly integrate this with your system.
+
+### Web app version 
 Manservant is a simple [Sinatra][] application, and is run just like any other
 Rack application.
 
 [sinatra]: http://www.sinatrarb.com/
 
-### Pow
+#### Pow
 
 The simplest way to run manservant is through [Pow][]. Ensure you have Pow
 installed and working, and run the following to install manservant:
@@ -41,7 +59,7 @@ Then visit [http://man.dev/](http://man.dev/) in your browser.
 
 [pow]: http://pow.cx/
 
-### Other
+#### Other
 
 There's many ways to run a Rack application, and I'm not gonna cover that
 here. But if you merely want to get manservant up and running to have a look,

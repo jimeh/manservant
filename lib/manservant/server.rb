@@ -20,7 +20,7 @@ module Manservant
       end
 
       def sanitize_name(name)
-        name.downcase.gsub(/[^a-z0-9\-_\.]/i, '')
+        name.gsub(/[^a-z0-9\-_\.]/i, '')
       end
 
       def find_page(name, section = nil)

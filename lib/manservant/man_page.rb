@@ -37,6 +37,13 @@ module Manservant
       # Strip empty lines from top of man page.
       html.gsub!(/^<PRE>\s*<\!\-\-.+\-\->\s*/, "<PRE>\n")
 
+      # Fix capitalization of href property of links to self in man page
+      # header.
+      html.gsub!(/^<PRE>\s*<B><A.+?\/A><\/B>.+?<B><A.+?\/A><\/B>/) do |match|
+        match.gsub(/HREF=\"(.*?)#{name.upcase}(.*?)\"/,
+          "HREF=\"\\1#{name}\\2\"")
+      end
+
       # Locate and attach id property to all section headers.
       html.gsub!(/<\/PRE>\s*<H2>\s*(.+?)\s*<\/H2>\s*<PRE>/) do |match|
         title = $1

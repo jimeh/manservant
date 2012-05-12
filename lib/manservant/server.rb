@@ -23,6 +23,12 @@ module Manservant
         name.gsub(/[^a-z0-9\-_\.]/i, '')
       end
 
+      def parse_config_file
+        config = {}
+        File.open("#{ENV['HOME']}/.manservantrc").read.split("\n").map!{|x| x.split('=').map!{|y| y.strip}}.each{|e| config[e[0].to_sym] = e[1]}
+        config
+      end
+
       def find_page(name, section = nil)
         ManPage.new(name, section,
           :man2html_path => man2html_path,
@@ -43,6 +49,8 @@ module Manservant
     end
 
     get '/:page' do
+      @config = parse_config_file
+      @style = @config[:style] || "default"
       @name, @section = parse_page_name(params[:page])
       @page = find_page(@name, @section)
       begin

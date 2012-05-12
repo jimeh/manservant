@@ -53,6 +53,18 @@ just clone the repo and run `rackup` inside the project directory:
 
 Then visit [http://localhost:9292/](http://localhost:9292/) in your browser.
 
+## Configuration
+
+Currently, manservant supports color schemes. Any file in
+`lib/manservant/server/public/css/themes` can be used as a theme. To use a
+theme, put the following line in a file called `~/.manservantrc`:
+
+```
+style = theme_name
+```
+
+The theme name is the name of the file, without the `.css` extension.
+
 ## Credits
 
 - Man page to HTML conversion is done by [man2html][], which is bundled into

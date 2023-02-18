@@ -4,7 +4,7 @@
 .man-navigation a,
 .man-error,
 .man-error p {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace !important;
+  font-family: Menlo, Monaco, Consolas, "Ubuntu Mono", "Courier New", monospace !important;
 }
 
 .man-content h2 {
@@ -33,7 +33,7 @@
   display: block !important;
   position: fixed;
   top: 0;
-  left: 96ex;
+  left: 100ex;
   bottom: 0;
   width: 100%;
   padding: 38px 0 20px 14px;

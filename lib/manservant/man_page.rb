@@ -93,8 +93,8 @@ module Manservant
           # overstrike (which seems to be the case with Linux's 'man' command)
           :sun => (RUBY_PLATFORM =~ /linux/) ? true : false,
         },
-        # this seems to be is required on Linux; 78 should be a reasonable
-        # default for any OS, given that the navigation is 96ex from the left
+        # seems to be required on Linux; 78 works pretty well on both Mac and
+        # Linux after bumping up the 'left' position of the navigation div
         :man_cols => 78
       }
     end
